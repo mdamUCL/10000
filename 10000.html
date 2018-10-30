@@ -1,0 +1,166 @@
+<html>
+<header>
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gloria+Hallelujah" rel="stylesheet">
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <link rel="shortcut icon" type="image/png" href="http://example.com/myicon.png"/>
+    <style>
+        .dice1{
+            background: url("dices.png") -0px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            background-repeat: no-repeat;
+            float: left;
+            margin:1px;
+        }
+        .dice2{
+            background: url("dices.png") -66px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            float: left;
+            background-repeat: no-repeat;
+            margin:1px;
+        }
+        .dice3{
+            background: url("dices.png") -132px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            float: left;
+            background-repeat: no-repeat;
+            margin:1px;
+        }
+        .dice4{
+            background: url("dices.png") -198px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            float: left;
+            background-repeat: no-repeat;
+            margin:1px;
+        }
+        .dice5{
+            background: url("dices.png") -264px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            float: left;
+            background-repeat: no-repeat;
+            margin:1px;
+        }
+        .dice6
+        {
+            background: url("dices.png") -330px -65px;
+            width: 65px;
+            height: 65px;
+            display:block;
+            background-repeat: no-repeat;
+            float: left;
+            margin:1px;
+        }
+        .diceSetup
+        {
+            width:1800px;
+            display: block;
+            position:absolute;
+            left:250px;
+            top:250px;
+        }
+        button{
+            height: 40px;
+            font-size: 16px;
+            background-color:#EEEEEE;
+            border-color: #AAAAAA;
+            border-width: 3px;
+            border-radius: 45%;
+            padding: 8;
+        }
+        input {
+
+            background-color: transparent;
+            height: 40px;
+            Border:0px;
+            font-size: 38px;   
+            color:white;
+            font-family: 'Gloria Hallelujah', cursive;
+            width:150px;
+       }
+        .inputAlert
+        {
+            background-color: lightcoral;
+            height: 40px;
+        }
+        .isInactive
+        {
+            color: lightgray;
+        }
+        .isActive
+        {
+            color:lightseagreen;
+        }
+        .title{
+            /*font-family: 'Fredericka the Great';*/
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 38px;
+            font-weight: bold;
+            color:white;
+        }
+        .diceTable{
+            height:620px;
+            width: 950px;
+            display: block;
+            background: url("table.jpg") -40px -200px;
+            float:left;
+            background-color: aqua;
+        }
+        .blackboard
+        {
+            display: block; 
+            background-color:black;
+            border:3px solid #999999; 
+            width:400px;
+            float:left; 
+            padding:10px;
+        }
+    </style>
+    <script src="game10000.js"></script>
+</header>
+
+<body>
+    <div class="diceTable">
+        <div class="diceSetup">
+            <div id="dice1" onclick="SetDiceONOFFHold(this)" class="dice1"></div> <!-- dice 1-6 -->
+            <div id="dice2" onclick="SetDiceONOFFHold(this)" class="dice2"></div>
+            <div id="dice3" onclick="SetDiceONOFFHold(this)" class="dice3"></div>
+            <div id="dice4" onclick="SetDiceONOFFHold(this)" class="dice4"></div>
+            <div id="dice5" onclick="SetDiceONOFFHold(this)" class="dice5"></div>
+            <div id="dice6" onclick="SetDiceONOFFHold(this)" class="dice6"></div>
+            <div Id="player1">
+                <span id="spn_player1" class="isActive"> Player 1 </span>
+            </div>
+            <div Id="player2">
+                <span id="spn_player2" class="isInactive"> Player 2 </span>
+            </div>
+        </div>
+    </div>
+    <div style="display:block; height:80px"></div>
+    <div class="blackboard">
+        <span class="title">Nuværende runde</span><br />
+        <input type="text" disabled="true" id="currentRound" />
+        <br><br>
+        <span class="title">Spiller 1: </span>
+        <input type="text" id="in_total1" disabled="true" /><br>
+        <span class="title">Spiller 2: </span>
+        <input type="text" id="in_total2" disabled="true" />
+        <br><br>
+        <button onclick="roleTheDice(false)">Kast terningerne</button>
+        <button onclick="endTurn()">Afslut runden</button>
+        <br><br>
+    </div>
+</body>
+<script>
+    window.onload = roleTheDice(true)
+</script>
+
+</html>
